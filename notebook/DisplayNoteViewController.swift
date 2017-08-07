@@ -67,7 +67,6 @@ class DisplayNoteViewController: UIViewController {
         if segue.identifier == "save" {
             //ノートオブジェクトが存在すれば更新し、変更されたオブジェクトを保存する。
             // noteのプロパティがnilの場合は、ノートが新規生成される。
-            // この判定は Nil Coalescing Operator で行っている。
             // ?? -> Nil Coalescing Operator
             let note = self.note ?? CoreDataHelper.newNote()
             note.title = noteTitleTextField.text ?? ""
@@ -75,29 +74,5 @@ class DisplayNoteViewController: UIViewController {
             CoreDataHelper.saveNote()
         }
     }
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let notesTableViewController = segue.destination as! NotesTableViewController
-        if segue.identifier == "save" {
-            if let note = note {
-                /*
-                 noteのプロパティがnilでない場合(ノートのタイトルと内容を更新するだけで良い場合)、実行される。
-                */
-                note.title = noteTitleTextField.text ?? ""
-                note.content = noteContentTextView.text ?? ""
-                // データをリロードするようテーブルビューに指示。
-                // これにより、作成した既存ノートの編集内容がノート一覧に反映される。
-                notesTableViewController.tableView.reloadData()
-            } else {
-                // noteのプロパティがnilであれば実行される。(ノートが新規生成される)
-                let newNote = Note()
-                newNote.title = noteTitleTextField.text ?? ""
-                newNote.content = noteContentTextView.text ?? ""
-                notesTableViewController.notes.append(newNote)
-            }
-        }
-    }
-    */
     
 }
