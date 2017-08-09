@@ -2,7 +2,7 @@
 This application is a modification of notebook(https://github.com/gentom/notebook).  
 In this version, you can save the note data permanently by using CoreData.    
 
-以前のバージョン(https://github.com/gentom/notebook)の改良版です。  
+以前のバージョンの改良版です。(https://github.com/gentom/notebook)  
 notebook2では、CoreDataを利用して永続的にノートデータを保持できます。
 
 ![notebook](https://github.com/gentom/notebook2/blob/master/images/notebook.png)  
